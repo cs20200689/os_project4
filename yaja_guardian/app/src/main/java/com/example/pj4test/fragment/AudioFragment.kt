@@ -58,7 +58,7 @@ class AudioFragment: Fragment(), ConversationClassifier.DetectorListener {
     override fun onResults(score: Float) {
         activity?.runOnUiThread {
             if (score > ConversationClassifier.THRESHOLD) {
-                conversationView.text = "CONVERSATION - " + counter.get_conversation()
+                conversationView.text = "CONVERSATION"
                 conversationView.setBackgroundColor(ProjectConfiguration.activeBackgroundColor)
                 conversationView.setTextColor(ProjectConfiguration.activeTextColor)
                 // plus conversation count
@@ -68,7 +68,7 @@ class AudioFragment: Fragment(), ConversationClassifier.DetectorListener {
                     conversationClassifier.stopInferencing()
                 }
             } else {
-                conversationView.text = "NO CONVERSATION - " + counter.get_conversation()
+                conversationView.text = "NO CONVERSATION"
                 conversationView.setBackgroundColor(ProjectConfiguration.idleBackgroundColor)
                 conversationView.setTextColor(ProjectConfiguration.idleTextColor)
             }

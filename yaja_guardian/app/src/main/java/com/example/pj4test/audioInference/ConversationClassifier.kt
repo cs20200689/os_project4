@@ -39,6 +39,8 @@ class ConversationClassifier {
         audioInitialize()
         startRecording()
 
+        // 변경 : 처음 화면 설정
+        detectorListener?.onResults(inference())
         startInferencing()
     }
 
